@@ -46,9 +46,15 @@ try:
             unsafe_allow_html=True)
         st.markdown("<br>", unsafe_allow_html=True)
         st.image(f"images/{lottery_facts[st.session_state.lottery_option]['image_file']}", width=154)
-
-
         st.markdown("<br>", unsafe_allow_html=True)
+
+        ## Image Capture
+        st.markdown(f"<p style = 'font-size:16px;color:{color_main}; '>Capture Image of Lottery Ticket </p>", unsafe_allow_html=True)
+        img_file_buffer = st.camera_input(label="___")
+
+        if img_file_buffer:
+            st.image(img_file_buffer, width=100)
+
         st.markdown(f"<hr style = 'height:1px; border-width:0; color:{color_main}; background-color:{color_main}'> ",
                         unsafe_allow_html=True)
         st.selectbox(label='Select Lottery',
