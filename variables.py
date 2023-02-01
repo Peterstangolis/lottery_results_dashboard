@@ -1,6 +1,8 @@
 
 lottery_guru_url = 'https://lotteryguru.com/ontario-lottery-results'
 
+olg_link = 'https://www.olg.ca/en/home.html'
+
 lottery_names = [
     "Lotto Max",
     "Lotto 6/49",

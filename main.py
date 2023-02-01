@@ -1,6 +1,6 @@
 
 from collect_numbers_drawn import new_row, list_conversion
-from variables import lottery_facts, number_keys, lottery_with_bonus, lottery_order_matters, lottery_names
+from variables import lottery_facts, number_keys, lottery_with_bonus, lottery_order_matters, lottery_names, olg_link
 
 
 import pandas as pd
@@ -68,7 +68,7 @@ with st.sidebar:
                 for num in range(st.session_state.keno_slider):
                     st.select_slider(label="", options=numbers_range, key=f"number_{num+1}")
 
-            submitted = st.form_submit_button(label="Submit")
+            submitted = st.form_submit_button(label="Check numbers")
 
     else:
         with st.form(key="submit_selection"):
