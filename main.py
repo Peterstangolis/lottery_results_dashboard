@@ -33,6 +33,8 @@ color_main = lottery_facts[st.session_state.lottery_option]["colors"][1]
 color_white = lottery_facts[st.session_state.lottery_option]["colors"][0]
 color_grey = lottery_facts[st.session_state.lottery_option]["colors"][-1]
 
+shadow = 'width:58px; height:58px; padding:14px;'
+
 try:
 
     st.markdown(
@@ -124,13 +126,13 @@ try:
     for e,c in enumerate(cols):
         with c:
             st.write(
-                f"<p style = 'border-radius: 50%; width:52px; height:52px; padding:10px; background:#fff; box-shadow: 3px 3px 5px {color_main}; border:3px solid {color_main}; color:{color_main}; text-align:center; font:bold 20px Arial, sans-serif;'> {last_numbers2[e]} </p>",
+                f"<p style = 'border-radius: 50%; width:58px; height:58px; padding:14px; background:#fff; border:3px solid {color_main}; color:{color_main}; text-align:center; font:bold 18px Arial, sans-serif;'> {last_numbers2[e]} </p>",
                 unsafe_allow_html=True)
     if st.session_state.lottery_option in lottery_with_bonus:
         bonus_number = int(df_filtered.tail(1)["Bonus Number"].values.tolist()[0])
         st.markdown(f"<p style = 'font-size:20px;color:{color_white};   '>BONUS NUMBER </p>", unsafe_allow_html=True)
         st.write(
-            f"<p style = 'border-radius: 50%; width:52px; height:52px; padding:10px; background:{color_main}; border:3px solid #fff; color:#fff; text-align:center; font:bold 20px Arial, sans-serif;'> {bonus_number} </p>",
+            f"<p style = 'border-radius: 50%; width:58px; height:58px; padding:14px;  background:{color_main}; border:3px solid #fff; color:#fff; text-align:center; font:bold 20px Arial, sans-serif;'> {bonus_number} </p>",
             unsafe_allow_html=True)
     else:
         bonus_number = 0
@@ -158,11 +160,11 @@ try:
             drawn_number = last_numbers2[number_pick]
             if st.session_state.lottery_option in lottery_order_matters:
                 st.write(
-                    f"<p style = 'border-radius: 50%; width:52px; height:52px; padding:10px; background:#fff; border:3px solid {color_main if picked_number == drawn_number else (color_main if picked_number == bonus_number else color_grey)}; color:{color_main if picked_number == drawn_number else (color_grey if picked_number == bonus_number else color_grey)}; text-align:center; font:bold 20px Arial, sans-serif;'> {picked_number} </p>",
+                    f"<p style = 'border-radius: 50%; width:58px; height:58px; padding:14px;  background:#fff; border:3px solid {color_main if picked_number == drawn_number else (color_main if picked_number == bonus_number else color_grey)}; color:{color_main if picked_number == drawn_number else (color_grey if picked_number == bonus_number else color_grey)}; text-align:center; font:bold 20px Arial, sans-serif;'> {picked_number} </p>",
                     unsafe_allow_html=True)
             else:
                 st.write(
-                    f"<p style = 'border-radius: 50%; width:52px; height:52px; padding:10px; background:#fff; border:3px solid {color_main if picked_number in last_numbers2 else(color_main if picked_number == bonus_number else color_grey)}; color:{color_main if picked_number in last_numbers2 else color_grey}; text-align:center; font:bold 20px Arial, sans-serif;'> {picked_number} </p>",
+                    f"<p style = 'border-radius: 50%; width:58px; height:58px; padding:14px;  background:#fff; border:3px solid {color_main if picked_number in last_numbers2 else(color_main if picked_number == bonus_number else color_grey)}; color:{color_main if picked_number in last_numbers2 else color_grey}; text-align:center; font:bold 20px Arial, sans-serif;'> {picked_number} </p>",
                     unsafe_allow_html=True)
 
     if st.session_state.lottery_option in lottery_order_matters:
