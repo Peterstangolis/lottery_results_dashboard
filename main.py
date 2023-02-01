@@ -152,6 +152,7 @@ try:
     for my_pick in range(numbers_selected):
         col_name2 = f"col_pick_{my_pick}"
         cols_picks.append(col_name2)
+
     cols_picks = st.columns(len(cols_picks))
 
     for number_pick, col_pick in enumerate(cols_picks):
@@ -181,6 +182,6 @@ except:
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     print("Program Running...")
-    #new_row()
+    new_row()
 
 
