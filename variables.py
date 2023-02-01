@@ -43,10 +43,10 @@ lottery_facts = {
     "Keno":{"value_range" : [1,70], "numbers_drawn":20,'numbers_repeated':False,
             'image_file':'keno.png', 'colors':['#F2F2F2', '#F0B74D', '#02A161', '#6C736F']},
 
-    "Pick 4":{"value_range" : [1,9], "numbers_drawn":4,'numbers_repeated':True,
+    "Pick 4":{"value_range" : [0,9], "numbers_drawn":4,'numbers_repeated':True,
               'image_file':'pick_4.png', 'colors':['#F2F2F2','#E6CF00', '#6C736F']},
 
-    "Pick 3":{"value_range" : [1,9], "numbers_drawn":3,'numbers_repeated':True,
+    "Pick 3":{"value_range" : [0,9], "numbers_drawn":3,'numbers_repeated':True,
               'image_file':'pick_3.png', 'colors':['#F2F2F2','#f22a3f', '#6C736F']},
 
     "Encore":{"value_range" : [1,9], "numbers_drawn":7, 'numbers_repeated':True,
