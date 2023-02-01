@@ -33,6 +33,7 @@ color_main = lottery_facts[st.session_state.lottery_option]["colors"][1]
 color_white = lottery_facts[st.session_state.lottery_option]["colors"][0]
 color_grey = lottery_facts[st.session_state.lottery_option]["colors"][-1]
 
+
 st.markdown(
     f"<H5 style='color:#F2F2F2; font-size:35px;'> LOTTERY RESULT CHECK - <mark style = 'font-family:liberation serif; font-size:44px; color:{color_main}; background-color:transparent;'>{st.session_state.lottery_option}</mark></H5>",
     unsafe_allow_html=True)
@@ -60,7 +61,7 @@ with st.sidebar:
     numbers_range = range(numbers_range[0], numbers_range[1] + 1)
 
     if st.session_state.lottery_option == 'Keno':
-        st.selectbox(label="How many numbers?", options=range(2, 10), key="keno_slider",
+        st.selectbox(label="How many numbers?", options=range(2, 11), key="keno_slider",
                      index=0)
         numbers_selected_keno = st.session_state.keno_slider
 
