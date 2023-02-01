@@ -60,5 +60,8 @@ number_keys = [
     'number_4',
     'number_5',
     'number_6',
-    'number_7'
+    'number_7',
+    'number_8',
+    'number_9',
+    'number_10'
 ]

@@ -45,6 +45,7 @@ with st.sidebar:
     st.markdown("<br>", unsafe_allow_html=True)
     st.image(f"images/{lottery_facts[st.session_state.lottery_option]['image_file']}", width=154)
 
+
     st.markdown("<br>", unsafe_allow_html=True)
     st.markdown(f"<hr style = 'height:1px; border-width:0; color:{color_main}; background-color:{color_main}'> ",
                     unsafe_allow_html=True)
@@ -61,6 +62,7 @@ with st.sidebar:
     if st.session_state.lottery_option == 'Keno':
         st.selectbox(label="How many numbers?", options=range(2, 10), key="keno_slider",
                      index=0)
+        numbers_selected_keno = st.session_state.keno_slider
 
         with st.form(key="submit_selection"):
 
@@ -78,7 +80,9 @@ with st.sidebar:
                 for num in range(numbers_selected):
                     st.select_slider(label="", options=numbers_range, key=f"number_{num+1}")
 
-            submitted = st.form_submit_button(label="Submit")
+            submitted = st.form_submit_button(label="Check numbers")
+
+    st.markdown(f"{olg_link}", unsafe_allow_html=True)
 
 
 ## Main Page
@@ -98,7 +102,10 @@ try:
 except:
     last_numbers2 = last_numbers
 
-numbers_selected_keys = number_keys[0:numbers_selected]
+if st.session_state.lottery_option == 'Keno':
+    numbers_selected_keys = number_keys[0:numbers_selected_keno]
+else:
+    numbers_selected_keys = number_keys[0:numbers_selected]
 
 
 cols = []
@@ -128,6 +135,10 @@ st.markdown("<br>", unsafe_allow_html=True)
 st.markdown(f"<p style = 'font-size:20px;color:{color_white};   '>MY PICKS </p>", unsafe_allow_html=True)
 st.markdown("<br>", unsafe_allow_html=True)
 cols_picks = []
+
+if st.session_state.lottery_option == 'Keno':
+    numbers_selected = st.session_state.keno_slider
+
 for my_pick in range(numbers_selected):
     col_name2 = f"col_pick_{my_pick}"
     cols_picks.append(col_name2)
